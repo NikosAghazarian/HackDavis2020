@@ -1,0 +1,59 @@
+$navLinkCount: 2;
+
+
+.navClickables {
+    transition-duration: 150ms;
+    cursor: pointer;
+}
+.navClickables:hover, .navClickables:focus{
+    transition-duration: 270ms;
+    background: rgb(88, 88, 88);
+}
+.navClickables:active, .navClickables:disabled {
+    background: rgb(119, 119, 119);
+}
+
+.navBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 30%;
+    background: rgb(44, 44, 44);
+    color: white;
+    font-size: 21px;
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        height: 30%;
+        flex-grow: 9;
+
+        a {
+            color: white;
+            display: inherit;
+            text-decoration: none;
+            border: 0;
+            width: (100%/$navLinkCount) - 25%;
+            justify-content: center;
+            font-weight: 500;
+        } 
+    }
+
+    div {
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        flex-grow: 1;
+        font-size: 16px;
+        
+        p {
+            margin: 0 0 0 0;
+            padding: 0;
+        }
+
+        i {
+            margin: 0 0 0 10px;
+        }
+    }
+}

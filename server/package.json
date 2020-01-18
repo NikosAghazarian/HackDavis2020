@@ -4,8 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "buildsass": "sass ./src/styles/styles.scss ./src/styles/styles.css",
+    "start": "node index.js"
   },
   "author": "Nikos Aghazarian",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "sass": "^1.25.0"
+  }
 }

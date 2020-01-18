@@ -1,0 +1,55 @@
+.navClickables {
+  transition-duration: 150ms;
+  cursor: pointer;
+}
+
+.navClickables:hover, .navClickables:focus {
+  transition-duration: 270ms;
+  background: #585858;
+}
+
+.navClickables:active, .navClickables:disabled {
+  background: #777777;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 30%;
+  background: #2c2c2c;
+  color: white;
+  font-size: 21px;
+}
+.navBar nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 30%;
+  flex-grow: 9;
+}
+.navBar nav a {
+  color: white;
+  display: inherit;
+  text-decoration: none;
+  border: 0;
+  width: 25%;
+  justify-content: center;
+  font-weight: 500;
+}
+.navBar div {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  flex-grow: 1;
+  font-size: 16px;
+}
+.navBar div p {
+  margin: 0 0 0 0;
+  padding: 0;
+}
+.navBar div i {
+  margin: 0 0 0 10px;
+}
+
+/*# sourceMappingURL=styles.css.map */
