@@ -1,5 +1,7 @@
 /server/node_modules
-/server/temp_images/*
+/server/images/*
+/server/img_data/*
 /.vscode
 data.json
 dataVisuals.js
+my_hackdavis2020.pyc
