@@ -20,7 +20,7 @@ def get_input(MSW_str, output_dict):
     # how to dispose of said type
     # additional fact/did you know OR alternatives
 
-    "Paper and Cardboard": [
+    "Paper Cardboard": [
         .25,
         "Paper and cardboard NOT contaminated with food or oil should be RECYCLED (blue). Paper and cardboard contaminated with food, paper towels, and paper napkins should be flattend and placed in COMPOST (green).",
         "However, paper plates and paper cups are should go to LANDFILL (black) unless certified to be composted! DID YOU KNOW: Paper makes up approximately 38% of the U.S. solid waste? You can help decrease this amount by reducing your paper usage!"],
@@ -48,11 +48,11 @@ def get_input(MSW_str, output_dict):
         .067,
         "Only wood that has not been contaminated (painted, stained, treated, etc) can be RECYCLED (blue)! Otherwise, it goes in LANDFILL (black).",
         "if possible, please reuse the wood you have; DIY projects help save resources!"],
-    "Rubber and Leather": [
+    "Rubber Leather": [
         .034,
         "Rubber should be RECYCLED (blue) and leather, if not reusable or repurposeable, should be COMPOSTED (green)!",
         "DID YOU KNOW: It takes years for rubber to decompose and when burned, releases harmful gases, polluting the air? Please recycle your rubber!"],
-    "Textiles and Cloth and Clothing": [
+    "Textiles Cloth Clothing Clothes": [
         .063,
         "If you must dispose your textiles, please RECYCLE (blue) them.",
         "However, it is best if you can reuse them (eg. as rags) or recycle them through donation!"]
