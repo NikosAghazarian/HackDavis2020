@@ -29,13 +29,18 @@ router.post('/upload/post', upload.single('image'), (req, res, err) => {
     }
 
     const TTL = 600; //time to live for images, in seconds
-    const filename = uuidv4() + '.png';
+    const id = uuidv4();
+    const filename = id + '.png';
     const imagePath = path.join(__dirname, `/images/${filename}`);
 
     fs.writeFileSync(imagePath, req.file.buffer);
     console.log(`File ${filename} has been created and will be stored for ${TTL} seconds locally before deletion.`);
     setTimeout( () => {
         fs.unlink(imagePath, (err) => {
+            if (err) throw err;
+            console.log(`File ${filename} was deleted.`);
+        });
+        fs.unlink(path.join(__dirname, `/img_data/${id}.json`), (err) => {
             if (err) throw err;
             console.log(`File ${filename} was deleted.`);
         });
