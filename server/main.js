@@ -8,7 +8,7 @@ const router = require('./router-component.js');
 
 let app = express();
 
-const directory = path.join(__dirname + '/temp_images/'); // this mess cleans the temp_images if the program quit before its removal callback
+const directory = path.join(__dirname + '/temp_images/'); // cleans stray temporary local images from users
 fs.readdir(directory, (err, files) => {
     if (err) throw err;
   
@@ -26,7 +26,7 @@ app.use(express.static(__dirname + '/src/'));
 app.use('/', router);
 
 
-let port = 9683;
-
-app.listen(port, '127.0.0.1');
-console.log(`Hosting server on 127.0.0.1 on PORT ${port}`);
+let port = process.env.PORT || 9683;
+let addr = '127.0.0.1';
+app.listen(port, addr);
+console.log(`Hosting server on ${addr} on PORT ${port}`);

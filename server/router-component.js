@@ -18,7 +18,10 @@ router.get('/', (req, res, err) => {
 
 router.post('/upload/post', upload.single('image'), (req, res, err) => {
     if (!req.file) {
-        res.status(401).json({error: 'Please provide an image'});
+        console.log('no image sent');
+        res.status(406);//.json({ error: "No Image Sent" });
+        res.send();
+        return;
     }
 
     const TTL = 120; //time to live for images, in seconds
@@ -33,9 +36,8 @@ router.post('/upload/post', upload.single('image'), (req, res, err) => {
             console.log(`File ${filename} was deleted.`);
         });
     }, TTL*1000);
-
-    res.status(200).json({ name: filename });
-    //need to send page data after api responses
+    res.status(200).sendFile('./views/visualization.html', options);
+    return;
 });
 
 module.exports = router

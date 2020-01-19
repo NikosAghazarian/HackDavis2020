@@ -2,16 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Internet Monitor</title>
+  <title>Environmental Scanning</title>
   <link rel="stylesheet" href="/styles/styles.css">
 </head>
+
+<div id='contentContainer'>
+  <div class="navBar">
+    <nav>
+      <a href="http://127.0.0.1:9683" class="navClickables" id="pageHeader">Environmental Scanning</a>
+    </nav>
+  </div>
+
+
+  <div class="main" id="main">
+    <h1 onclick="tester()">IT WORKS</h1>
+    <p>Image Upload</p>
+    <!-- method="post" action="upload/post" enctype="multipart/form-data"-->
+    <form id="imgUploadForm">
+      <input type="file" name="image" /><br /><br />
+    </form>
+    <button id="submitButton" onclick="submitForm()">Upload</button>
+    <p id="errorDisplay"></p>
+  </div>
+
+  <div class="footer">
+    <h4>HackDavis 2020</h4>
+    <p>William Wu, Nikos Aghazarian, Danny DeVito, Steph Anie</p>
+  </div>
+</div>
 <script type='text/javascript' src='../javascripts/index.js'></script>
-
-<h1 onclick="tester()">IT WORKS</h1>
-
-
-<p>Image Upload</p>
-<form method="post" action="upload/post" enctype="multipart/form-data">
-    <input type="file" name="image" /><br /><br />
-    <button type="submit" name="upload">Upload</button>
-</form>
+<script type='text/javascript' src='../javascripts/visualization.js'></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
