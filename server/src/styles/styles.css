@@ -1,3 +1,7 @@
+h1 {
+  font-family: fantasy;
+}
+
 .navClickables {
   transition-duration: 150ms;
   cursor: pointer;
