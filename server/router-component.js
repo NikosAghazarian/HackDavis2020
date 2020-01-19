@@ -16,6 +16,10 @@ router.get('/', (req, res, err) => {
     res.sendFile('./views/index.html', options);
 });
 
+/* router.get('/imagedata', (req, res, err) => {
+    res.sendFile('../images/', { root: path.join(__dirname, '/src/') })
+}) */
+
 router.post('/upload/post', upload.single('image'), (req, res, err) => {
     if (!req.file) {
         console.log('no image sent');
@@ -26,7 +30,7 @@ router.post('/upload/post', upload.single('image'), (req, res, err) => {
 
     const TTL = 120; //time to live for images, in seconds
     const filename = uuidv4() + '.png';
-    const imagePath = path.join(__dirname, `/temp_images/${filename}`);
+    const imagePath = path.join(__dirname, `/images/${filename}`);
 
     fs.writeFileSync(imagePath, req.file.buffer);
     console.log(`File ${filename} has been created and will be stored for ${TTL} seconds locally before deletion.`);

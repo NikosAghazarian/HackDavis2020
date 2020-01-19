@@ -1,3 +1,23 @@
+window.onresize = mobileStyleToggle;
+
+function mobileStyleToggle() {
+    console.log('resize');
+    let parentElem = document.getElementsByTagName('html')[0];
+    console.log(Array.from(parentElem.classList.values));
+    if (parentElem.clientWidth <= 850) {
+        if (!parentElem.classList.value.includes('mobileStyles')) {
+            console.log('window.outerWidth <= 850');
+            parentElem.classList.add('mobileStyles')
+        }
+    }
+    else {
+        if (parentElem.classList.value.includes('mobileStyles')) {
+            console.log('window.outerWidth > 850');
+            parentElem.classList.remove('mobileStyles')
+        }
+    }
+}
+
 function tester() {
     console.log('test successful');
 }
@@ -41,6 +61,3 @@ async function submitForm() {
     mainDiv.innerHTML = returnedData;
 }
 
-if (window.outerWidth <= 850) {
-    document.getElementById('contentContainer').classList.add('mobileStyles')
-}

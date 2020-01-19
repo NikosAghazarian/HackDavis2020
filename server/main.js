@@ -8,7 +8,7 @@ const router = require('./router-component.js');
 
 let app = express();
 
-const directory = path.join(__dirname + '/temp_images/'); // cleans stray temporary local images from users
+const directory = path.join(__dirname + '/images/'); // cleans stray temporary local images from users
 fs.readdir(directory, (err, files) => {
     if (err) throw err;
   
