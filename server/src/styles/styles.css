@@ -4,15 +4,17 @@ html {
   display: flex;
   flex-direction: column;
   height: auto;
+  width: 100%;
   min-height: 100%;
-  overflow: auto;
+  overflow-x: hidden;
 }
 
 .mobileStyles {
   font-size: 40px;
+  overflow: hidden;
 }
 .mobileStyles #pageHeader {
-  font-size: 90px;
+  font-size: 75px;
 }
 .mobileStyles h1 {
   font-size: 70px;
@@ -22,6 +24,9 @@ html {
 }
 .mobileStyles button {
   font-size: inherit;
+}
+.mobileStyles div.footer {
+  font-size: 30px;
 }
 
 body {
@@ -107,6 +112,7 @@ h1 {
   display: flex;
   flex-direction: column;
   flex-grow: 50;
+  width: 100%;
   margin: 5px;
 }
 .main button {
@@ -118,6 +124,7 @@ h1 {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  width: 100vw;
   background: #2c2c2c;
   padding: 5px;
 }

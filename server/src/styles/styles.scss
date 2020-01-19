@@ -6,14 +6,16 @@ html {
     display: flex;
     flex-direction: column;
     height: auto;
+    width: 100%;
     min-height: 100%;
-    overflow: auto;
+    overflow-x: hidden;
 }
 
 .mobileStyles {
     font-size: 40px;
+    overflow: hidden;
     #pageHeader {
-        font-size: 90px;
+        font-size: 75px;
     }
 
     h1 {
@@ -26,6 +28,10 @@ html {
     
     button {
         font-size: inherit;
+    }
+
+    div.footer {
+        font-size: 30px;
     }
 }
 
@@ -118,6 +124,7 @@ h1 {
     flex-direction: column;
     flex-grow: 50;
     //height: 60%;
+    width: 100%;
     margin: 5px;
     
     button {
@@ -130,7 +137,9 @@ h1 {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    width: 100vw;
     //height: 10%;
     background: rgb(44, 44, 44);
     padding: 5px;
+
 }

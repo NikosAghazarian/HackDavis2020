@@ -27,6 +27,6 @@ app.use('/', router);
 
 
 let port = process.env.PORT || 9683;
-let addr = '127.0.0.1';
+let addr = '10.50.221.202';
 app.listen(port, addr);
-console.log(`Hosting server on ${addr} on PORT ${port}`);
+console.log(`Hosting server on ${addr} on PORT ${port}: http://${addr}:${port}`);
