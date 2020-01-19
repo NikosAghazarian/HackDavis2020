@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const exec = require('child_process');
+const exec = require('child_process').exec;
 const uuidv4 = require('uuid/v4');
 
 const router = require('express').Router();
@@ -16,9 +16,9 @@ router.get('/', (req, res, err) => {
     res.sendFile('./views/index.html', options);
 });
 
-/* router.get('/imagedata', (req, res, err) => {
-    res.sendFile('../images/', { root: path.join(__dirname, '/src/') })
-}) */
+router.get('/imagedata', (req, res, err) => {   
+    res.sendFile(`../img_data/${req.query.id}`, { root: path.join(__dirname, '/src/'), headers: {fileId: `${filename}`} })
+}) 
 
 router.post('/upload/post', upload.single('image'), (req, res, err) => {
     if (!req.file) {
@@ -28,7 +28,7 @@ router.post('/upload/post', upload.single('image'), (req, res, err) => {
         return;
     }
 
-    const TTL = 120; //time to live for images, in seconds
+    const TTL = 600; //time to live for images, in seconds
     const filename = uuidv4() + '.png';
     const imagePath = path.join(__dirname, `/images/${filename}`);
 
@@ -40,7 +40,10 @@ router.post('/upload/post', upload.single('image'), (req, res, err) => {
             console.log(`File ${filename} was deleted.`);
         });
     }, TTL*1000);
-    res.status(200).sendFile('./views/visualization.html', options);
+    exec(`py ../VisionTest.py ${imagePath} ${filename}`, (err) => {
+        console.log(err);
+    });
+    res.status(200).sendFile('./views/visualization.html', { root: path.join(__dirname, '/src/'), headers: {fileId: `${filename}`} });
     return;
 });
 

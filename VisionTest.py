@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 
 import sys
-def run_quickstart(imageName):
+import my_hackdavis2020
+
+def run_quickstart(imageName, dataId):
     # [START vision_quickstart]
     import io
     import os
@@ -27,8 +29,7 @@ def run_quickstart(imageName):
     returnLabels = []
     for label in labels:
         returnLabels.append(label.description)
-    return returnLabels
 
-
-if __name__ == '__main__':
-    run_quickstart(sys.argv[1])
+    return my_hackdavis2020.main(returnLabels, dataId)
+    
+run_quickstart(sys.argv[1], sys.argv[2])

@@ -14,11 +14,7 @@ function mobileStyleToggle() {
     }
 }
 
-function tester() {
-    console.log('test successful');
-}
-
-function sendXMLRequest(path, body) {
+function sendXMLRequest(path, body, method = 'POST') {
     /* 
     *  Handles and returns an XHR promise with a given path of the app
     */
@@ -26,12 +22,11 @@ function sendXMLRequest(path, body) {
 
     return new Promise(function (resolve, reject) {
         let request = new XMLHttpRequest();
-/*         request.responseType = 'document'; */
-        request.open('POST', url, true);
+        request.open(method, url, true);
         request.onload = () => {
             let status = request.status;
             if (status >= 200 && status < 300) {
-                resolve(request.response);
+                resolve([request.response, request.getResponseHeader('fileId')]);
             } else {
                 reject(request.statusText);
             }
@@ -54,6 +49,11 @@ async function submitForm() {
     }
 
     let mainDiv = document.getElementById('main');
-    mainDiv.innerHTML = returnedData;
+    mainDiv.innerHTML = returnedData[0];
+    processFormReturn(returnedData);
 }
 
+function processFormReturn(returnedData) {
+    console.log(returnedData.toString());
+    createTable(returnedData[1]);
+}

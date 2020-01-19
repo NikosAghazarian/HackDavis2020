@@ -1,2 +1,5 @@
 /server/node_modules
 /server/temp_images/*
+/.vscode
+data.json
+dataVisuals.js

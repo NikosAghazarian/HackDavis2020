@@ -1,7 +1,7 @@
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
-function createTable(item : string){
+function createTable(item){
   // json.parse returns a json object from some string
   var data = JSON.parse(item);
   var table = new google.visualization.DataTable();

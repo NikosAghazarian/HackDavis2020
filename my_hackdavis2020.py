@@ -15,7 +15,7 @@ def get_input(MSW_str, output_dict):
 
     msw_dict = {
 
-    #type:
+    # type
     # percent of world material trash
     # how to dispose of said type
     # additional fact/did you know OR alternatives
@@ -79,7 +79,7 @@ def get_input(MSW_str, output_dict):
 
 # input: string api key word to ID which kind of MSW
 # output: json file with the appropriate text (impact, compost, alternatives) to be displayed
-def main(input_list):
+def main(input_list, dataId):
     split_input = []
     for input_item in input_list:
         temp = input_item.split()
@@ -101,7 +101,5 @@ def main(input_list):
     'Textiles': "https://www.calrecycle.ca.gov/reducewaste/textiles"
     }
     #print(output_dict)
-    with open('data.json', 'w') as outfile:
+    with open('./img_data/' + dataId + '.json', 'w') as outfile:
         json.dump(output_dict, outfile)
-
-main(["Glass", "Bottle", "Glass bottle", "Cola"])
